@@ -80,6 +80,27 @@ The application creates `data/patients.db` automatically on first launch. The da
 
 The database and the entire `data/` directory are ignored by Git because they can contain patient data. Tests use an in-memory SQLite database and do not modify the application database.
 
+### Optional assignment demonstration data
+
+Demo data is never loaded automatically when the application starts. To preview
+the exact classification without writing anything:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\load_demo_data.py --dry-run
+```
+
+After confirming the database is empty, explicitly load only the six accepted
+records:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\load_demo_data.py
+```
+
+The command skips the invalid and duplicate records, saves valid records with
+`ai_status=failed` when Gemini is unavailable, and never invents AI remarks.
+It refuses to modify a non-empty demonstration database. Automated tests remain
+isolated in temporary in-memory databases.
+
 ## Validation rules
 
 - Full name is required and accepts letters, spaces, hyphens, apostrophes, and Roman numerals.
