@@ -1,0 +1,31 @@
+# Secrets - never commit real credentials
+.env
+.env.*
+!.env.example
+
+# Virtual environment
+.venv/
+venv/
+
+# Local database and logs (contain patient data)
+data/
+*.db
+*.sqlite3
+logs/
+*.log
+
+# Python build and cache files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit local secrets
+.streamlit/secrets.toml
