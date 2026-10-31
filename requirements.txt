@@ -7,4 +7,5 @@ pydantic==2.14.2         # input validation and structured AI response parsing
 google-genai==2.34.0     # official Google Gemini SDK
 python-dotenv==1.2.4     # loads settings from the .env file
 pandas==3.1.0            # tabular display of patient records
+altair==6.3.0            # biomarker visualizations
 pytest==9.2.0            # automated tests
